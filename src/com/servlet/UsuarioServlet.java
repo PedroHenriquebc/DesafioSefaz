@@ -1,6 +1,7 @@
 package com.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -79,6 +80,7 @@ public class UsuarioServlet extends HttpServlet {
 		telefoneDao.inserirTelefone(usuarioDao.lerIdByEmail(email), telefone); //Inserindo um telefone a um usuario que é selecionado no banco pelo email "usuarioDao.getUsuarioId(email)"
 		response.sendRedirect("index.jsp");
 	}
+
 	
 	protected void telaAlteracao(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("idusuario"));
@@ -100,7 +102,7 @@ public class UsuarioServlet extends HttpServlet {
 	protected void excluir(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("idusuario"));
 		usuarioDao.deletarUsuario(id);
-		response.sendRedirect("telaLogado.jsp");
+		
 	}
 	
 }

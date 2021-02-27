@@ -9,9 +9,10 @@
 <title>Login</title>
 </head>
 <body>
+<center>
 	<h1>Login</h1>
 	
-	<form name="frmLogin" action="login" method="get">
+	<form name="frmLogin" action="login">
 		<table>
 			<tr>
 				<td><input type="email" name="email"
@@ -22,8 +23,9 @@
 					placeholder="Digite sua senha" required name="senha"></td>
 			</tr>
 		</table>
-		<input type="submit" value="Entrar"> <input type="button" value="Cadastrar" onclick="window.location.href='cadastro.jsp';">
+		<input type="submit" value="Entrar"> <input type="button" value="Cadastrar" onclick="window.location.href='usuarioCadastrar.jsp';">
 
 	</form>
+	</center>
 </body>
 </html>

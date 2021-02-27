@@ -16,7 +16,7 @@ import com.model.Telefone;
 import com.model.Usuario;
 
 
-@WebServlet(urlPatterns={"/TelefoneServlet", "/telefones"})
+@WebServlet(urlPatterns={"/TelefoneServlet", "/telefones", "/adicionarTelefone", "/excluirTelefone"})
 public class TelefoneServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	Usuario usuario = new Usuario();
@@ -34,6 +34,12 @@ public class TelefoneServlet extends HttpServlet {
 		case "/telefones":
 			listarTelefones(request, response);
 			break;
+		case "/adicionarTelefone":
+			adicionarTelefone(request, response);
+			break;
+		case "/excluirTelefone":
+			excluirTelefone(request, response);
+			break;
 		default:
 			response.sendRedirect("index.jsp");	
 		}
@@ -47,4 +53,19 @@ public class TelefoneServlet extends HttpServlet {
 		RequestDispatcher rd = request.getRequestDispatcher("telaListaTelefones.jsp");
 		rd.forward(request, response);
 		}
+	
+	protected void adicionarTelefone(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int idusuario = Integer.parseInt(request.getParameter("idusuario"));
+		telefone.setDdd(Integer.parseInt(request.getParameter("ddd")));
+		telefone.setNumero(request.getParameter("numero"));
+		telefone.setTipo(request.getParameter("tipotelefone"));
+		telefoneDao.inserirTelefone(idusuario, telefone);
+		response.sendRedirect("telaLogado.jsp");
+	}
+	
+	protected void excluirTelefone(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int id = Integer.parseInt(request.getParameter("id"));
+		telefoneDao.deletarTelefone(id);
+		response.sendRedirect("telaLogado.jsp");
+	}
 }

@@ -7,6 +7,7 @@
 <title>Cadastro de Usuario</title>
 </head>
 <body>
+<center>
 	<h1>Cadastro de Usuario</h1>
 	<form name="frmCadastro" action="cadastrar">
 		<table>
@@ -40,5 +41,6 @@
 		<input type="submit" value="Finalizar"> <input type="button"
 			value="Voltar" onclick="window.location.href='index.jsp';">
 	</form>
+	</center>
 </body>
 </html>

@@ -150,4 +150,22 @@ public class UsuarioDAO {
 		return existe;
 	}
 
+	// CHECAR SE EXISTE UM USUARIO NO BANCO DE DADOS COM TAL EMAIL
+		public boolean existeEmail(String email) {
+			boolean existe = false;
+			String query = "select * from usuarios where email = ?";
+			try {
+				Connection con = conexao.conectar();
+				PreparedStatement pst = con.prepareStatement(query);
+				pst.setString(1, email);
+				ResultSet rs = pst.executeQuery();
+				if (rs.next()) {
+					existe = true;
+				}
+			} catch (Exception e) {
+				System.out.println(e);
+
+			}
+			return existe;
+		}	
 }

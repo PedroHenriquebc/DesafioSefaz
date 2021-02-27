@@ -11,6 +11,7 @@ Usuario usuario = (Usuario) request.getAttribute("usuario");
 <title>Alterar Usuario</title>
 </head>
 <body>
+<center>
 <h1>Alteracao de usuario</h1>
 <form name="frmAlterar" action="alterar">
 		<table>
@@ -33,5 +34,6 @@ Usuario usuario = (Usuario) request.getAttribute("usuario");
 		<input type="submit" value="Finalizar"> <input type="button"
 			value="Voltar" onclick="window.location.href='telaLogado.jsp';">
 	</form>
+</center>
 </body>
 </html>

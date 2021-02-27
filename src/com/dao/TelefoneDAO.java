@@ -53,9 +53,10 @@ public class TelefoneDAO {
 		}
 	}
 	
+	//LISTAR TELEFONES DE ALGUM ID
 	public ArrayList<Telefone> listaTelefonesById(int id) {
 		ArrayList<Telefone> listatelefones = new ArrayList<>();
-		String telefones = "select * from telefones where id = ?";
+		String telefones = "select * from telefones where idusuario = ?";
 		try {
 			Connection con = conexao.conectar();
 			PreparedStatement pst = con.prepareStatement(telefones);
@@ -76,4 +77,17 @@ public class TelefoneDAO {
 			return null;
 		}
 	}
+	//DELETAR
+	public void deletarTelefone(int id) {
+		String deletar = "delete from telefones where id = ?";
+		try {
+			Connection con = conexao.conectar();
+			PreparedStatement pst = con.prepareStatement(deletar);
+			pst.setInt(1, id);
+			pst.executeUpdate();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+	
 }

@@ -14,7 +14,9 @@ ArrayList<Usuario> lista = usuarioDao.listaUsuarios();
 <title>Lista Usuarios</title>
 </head>
 <body>
+<center>
 <table>
+<h1>Usuarios</h1>
 		<thead>
 			<tr>
 				<th>Nome</th>
@@ -38,6 +40,7 @@ ArrayList<Usuario> lista = usuarioDao.listaUsuarios();
 	<a href="index.jsp">
    <button>Logout</button>
 	</a>
+	</center>
 </body>
 <script src="scripts/alerts.js"></script>
 </html>

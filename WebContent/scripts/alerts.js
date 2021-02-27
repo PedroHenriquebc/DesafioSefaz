@@ -1,5 +1,6 @@
-function excluir(){
-	if (confirm("Deseja excluir o usuario?")) {
+function deletar(){
+	if (confirm("Deseja excluir ?")) {
+		alert("Excluido com sucesso!")
     } else {
       return false;
     

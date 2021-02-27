@@ -64,5 +64,11 @@ public class Telefone {
 	public void setIdusuario(int idusuario) {
 		this.idusuario = idusuario;
 	}
+
+	@Override
+	public String toString() {
+		return "Telefone [id=" + id + ", ddd=" + ddd + ", numero=" + numero + ", tipo=" + tipo + ", idusuario="
+				+ idusuario + "]";
+	}
 	
 }
