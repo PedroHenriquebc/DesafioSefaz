@@ -1,16 +1,20 @@
 package com.model;
 
 public class Telefone {
+	private int id;
 	private int ddd;
 	private String numero;
 	private String tipo;
+	private int idusuario;
 	
 	//CONTRUTORES
-	public Telefone(int ddd, String numero, String tipo) {
+	public Telefone(int id, int ddd, String numero, String tipo, int idusuario) {
 		super();
+		this.id = id;
 		this.ddd = ddd;
 		this.numero = numero;
 		this.tipo = tipo;
+		this.idusuario = idusuario;
 	}
 
 	public Telefone() {
@@ -19,9 +23,19 @@ public class Telefone {
 
 	
 	//GETTERS AND SETTERS
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	public int getDdd() {
 		return ddd;
 	}
+
 
 	public void setDdd(int ddd) {
 		this.ddd = ddd;
@@ -41,6 +55,14 @@ public class Telefone {
 
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
+	}
+
+	public int getIdusuario() {
+		return idusuario;
+	}
+
+	public void setIdusuario(int idusuario) {
+		this.idusuario = idusuario;
 	}
 	
 }
