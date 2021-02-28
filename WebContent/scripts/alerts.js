@@ -3,6 +3,10 @@ function deletar(){
 		alert("Excluido com sucesso!")
     } else {
       return false;
-    
 	}
 }
+
+function login(){
+	document.forms["frmLogin"].submit()
+	alert("Login realizado com sucesso!")
+	}

@@ -1,0 +1,52 @@
+@charset "ISO-8859-1";
+
+
+body {
+	background-image: url('imagens/bg2.jpg');
+	margin-top: 300px;
+}
+
+.Caixa {
+	width: 320px;
+	padding: 5px;
+	margin-bottom: 10px;
+	border: 1px solid #4682B4;
+	border-radius: 5px;
+}
+
+.CaixaDDD {
+	width: 50px;
+	padding: 5px;
+	margin-bottom: 10px;
+	border: 1px solid #4682B4;
+	border-radius: 5px;
+}
+
+.Select{
+	width: 320px;
+	padding: 5px;
+	margin-bottom: 10px;
+	border: 1px solid #4682B4;
+	border-radius: 5px;
+}
+
+#tabela {
+	margin-top: 30px;
+	border: 3px solid #ddd;
+	background: white;
+	margin-bottom: 30px;
+}
+
+#tabela th {
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align: left;
+	background: 	#808080;
+	color: white;
+}
+
+#tabela td {
+	border: 1px solid #ddd;
+	padding: 10px;
+	background: white;
+}
