@@ -12,7 +12,7 @@ import com.model.Usuario;
 public class TelefoneDAO {
 	Conexao conexao = new Conexao();
 	
-	//POST
+	//CRIAR
 	public void inserirTelefone(int idusuario, Telefone telefone) {
 		String inserir = "insert into telefones(ddd, numero, tipo, idusuario) values (?,?,?,?)";
 		try {
@@ -53,7 +53,7 @@ public class TelefoneDAO {
 		}
 	}
 	
-	//LISTAR TELEFONES DE ALGUM ID
+	//LISTAR TELEFONES DE ALGUM USUARIO
 	public ArrayList<Telefone> listaTelefonesById(int id) {
 		ArrayList<Telefone> listatelefones = new ArrayList<>();
 		String telefones = "select * from telefones where idusuario = ?";
@@ -90,4 +90,22 @@ public class TelefoneDAO {
 		}
 	}
 	
+	//EXISTE NUMERO
+	public boolean existeNumero(String numero) {
+		boolean existe = false;
+		String existeNumero = "select * from telefones where numero = ?";
+		try {
+			Connection con = conexao.conectar();
+			PreparedStatement pst = con.prepareStatement(existeNumero);
+			pst.setString(1, numero);
+			ResultSet rs = pst.executeQuery();
+			if (rs.next()) {
+				existe = true;
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+
+		}
+		return existe;
+	}
 }

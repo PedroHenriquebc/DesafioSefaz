@@ -153,10 +153,10 @@ public class UsuarioDAO {
 	// CHECAR SE EXISTE UM USUARIO NO BANCO DE DADOS COM TAL EMAIL
 		public boolean existeEmail(String email) {
 			boolean existe = false;
-			String query = "select * from usuarios where email = ?";
+			String existeEmail = "select * from usuarios where email = ?";
 			try {
 				Connection con = conexao.conectar();
-				PreparedStatement pst = con.prepareStatement(query);
+				PreparedStatement pst = con.prepareStatement(existeEmail);
 				pst.setString(1, email);
 				ResultSet rs = pst.executeQuery();
 				if (rs.next()) {

@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
+<%@ page import="com.dao.TelefoneDAO"%>
 <%@ page import="com.model.Telefone"%>
 <%@ page import="java.util.*"%>
 <%
+TelefoneDAO telefoneDao = new TelefoneDAO();
 ArrayList<Telefone> lista = (ArrayList<Telefone>) request.getAttribute("listaTelefones");
 %>
 <html>
@@ -32,28 +34,46 @@ ArrayList<Telefone> lista = (ArrayList<Telefone>) request.getAttribute("listaTel
 				</tr>
 			</thead>
 			<tbody>
-				<%for (int i = 0; i < lista.size(); i++){ %>
+				<%
+				for (int i = 0; i < lista.size(); i++) {
+				%>
 				<tr>
 					<td><%=lista.get(i).getDdd()%></td>
 					<td><%=lista.get(i).getNumero()%></td>
 					<td><%=lista.get(i).getTipo()%></td>
+					<%
+					if (telefoneDao.listaTelefonesById(lista.get(i).getIdusuario()).size() == 1) {
+					%>
+					<td><button class="btn btn-danger" disabled>Excluir</button></td>
+
+					<%
+					} else {
+					%>
 					<td><a href="excluirTelefone?id=<%=lista.get(i).getId()%>"
 						onclick="return deletar()"><button class="btn btn-danger">Excluir</button></a></td>
 				</tr>
-				<%} %>
-
+				<%
+				}
+				%>
+				<%
+				}
+				%>
 			</tbody>
 		</table>
 
 
 		<form name="frmAdicionar" action="adicionarTelefone">
 			<table>
-			<%for (int i = 0; i < lista.size(); i++){ %>
+				<%
+				for (int i = 0; i < lista.size(); i++) {
+				%>
 				<tr>
 					<td><input type="hidden"
 						value="<%=lista.get(i).getIdusuario()%>" name="idusuario"></td>
 				</tr>
-				<%} %>
+				<%
+				}
+				%>
 				<h1 class="display-4">Adicionar Telefone</h1>
 				<tr>
 					<td><input type="text" name="ddd" maxlength="2"

@@ -4,6 +4,11 @@
 <%@ page import="com.dao.*"%>
 <%@ page import="java.util.*"%>
 <%
+
+Usuario usuario = (Usuario) session.getAttribute("usuarioLogado");
+if(usuario == null){
+	response.sendRedirect("telaFalhaLogin.jsp");
+}
 UsuarioDAO usuarioDao = new UsuarioDAO();
 ArrayList<Usuario> lista = usuarioDao.listaUsuarios();
 %>
@@ -40,8 +45,8 @@ ArrayList<Usuario> lista = usuarioDao.listaUsuarios();
 			<%} %>
 		</tbody>
 	</table>
-	<a href="index.jsp">
-   <button class="btn btn-secondary">Logout</button>
+	<a href="logout" >
+   <button class="btn btn-secondary" onlick="return logout()" >Logout</button>
 	</a>
 	</center>
 </body>

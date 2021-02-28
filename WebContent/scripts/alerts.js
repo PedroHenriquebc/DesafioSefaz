@@ -6,7 +6,10 @@ function deletar(){
 	}
 }
 
-function login(){
-	document.forms["frmLogin"].submit()
-	alert("Login realizado com sucesso!")
+function logout(){
+	if (confirm("Deseja sair e encerrar a sessão?")) {
+	// Não faz nada e sai da sessão
+    } else {
+      return false;
 	}
+}
