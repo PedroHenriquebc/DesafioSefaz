@@ -1,7 +1,7 @@
 # DesafioSefaz
 Desafio técnico do processo seletivo SEFAZ 2021
 
-Recursos Utilizados:
+Recursos Técnicos utilizados:
 
 • Utilizado a Plataforma – Java EE
 
@@ -17,4 +17,6 @@ Recursos Utilizados:
 
 • Disponibilizado o código em repositório Git online (Gitlab ou Github)
 
-• Uso de servidor de aplicação Wildfly (http://localhost:8080/DesafioSefaz-0.0.1-SNAPSHOT)
+• Uso de servidor de aplicação Wildfly 22.0.1.Final (http://localhost:8080/DesafioSefaz-0.0.1-SNAPSHOT)
+
+OBS: É preciso criar o banco de dados e suas tabelas. Queries já prontas na pasta "CriarBD".
