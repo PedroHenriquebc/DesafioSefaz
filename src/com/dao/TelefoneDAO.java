@@ -12,6 +12,8 @@ import com.model.Usuario;
 public class TelefoneDAO {
 	Conexao conexao = new Conexao();
 	
+	// NECESSARIO CRIAR A TABELA NO BANCO(Queries prontas na pasta "CriarBD")
+	
 	//CRIAR
 	public void inserirTelefone(int idusuario, Telefone telefone) {
 		String inserir = "insert into telefones(ddd, numero, tipo, idusuario) values (?,?,?,?)";
@@ -29,7 +31,7 @@ public class TelefoneDAO {
 		}
 	}
 	
-	//LISTAR TELEFONES
+	//LISTAR TODOS OS TELEFONES
 	public ArrayList<Telefone> listaTelefones() {
 		ArrayList<Telefone> listatelefones = new ArrayList<>();
 		String telefones = "select * from telefones order by id";
@@ -53,7 +55,7 @@ public class TelefoneDAO {
 		}
 	}
 	
-	//LISTAR TELEFONES DE ALGUM USUARIO
+	//LISTAR TELEFONES DE ALGUM USUARIO ATRAVÉS DO SEU ID
 	public ArrayList<Telefone> listaTelefonesById(int id) {
 		ArrayList<Telefone> listatelefones = new ArrayList<>();
 		String telefones = "select * from telefones where idusuario = ?";
@@ -90,7 +92,7 @@ public class TelefoneDAO {
 		}
 	}
 	
-	//EXISTE NUMERO
+	//VERIFICAR SE O NUMERO EXISTE NO BANCO
 	public boolean existeNumero(String numero) {
 		boolean existe = false;
 		String existeNumero = "select * from telefones where numero = ?";

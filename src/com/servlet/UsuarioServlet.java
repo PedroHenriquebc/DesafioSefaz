@@ -30,8 +30,8 @@ public class UsuarioServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String action = request.getServletPath();
-		System.out.println(action);
+		String action = request.getServletPath();           
+		System.out.println(action);                            //MONITORAR PELO CONSOLE QUAL ACTION ESTÁ SENDO CHAMADA
 		switch (action) {
 		case "/login":
 			validarLogin(request, response);
@@ -91,9 +91,9 @@ public class UsuarioServlet extends HttpServlet {
 			telefone.setDdd(ddd);
 			telefone.setNumero(numero);
 			telefone.setTipo(tipo);
-			telefoneDao.inserirTelefone(usuarioDao.lerIdByEmail(email), telefone); // Inserindo um telefone a um usuario
+			telefoneDao.inserirTelefone(usuarioDao.lerIdByEmail(email), telefone); // Atribuindo um telefone a um usuario
 																					// que é selecionado no banco pelo
-																					// email
+																					// email:
 																					// "usuarioDao.getUsuarioId(email)"
 			response.sendRedirect("index.jsp");
 		}

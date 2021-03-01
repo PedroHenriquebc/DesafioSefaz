@@ -10,7 +10,9 @@ import com.model.Usuario;
 
 public class UsuarioDAO {
 	Conexao conexao = new Conexao();
-
+	
+	// NECESSARIO CRIAR A TABELA NO BANCO(Queries prontas na pasta "CriarBD")
+	
 	//LER USUARIO PELO ID
 	public Usuario lerUsuario(int id) {
 		Usuario usuario = new Usuario();

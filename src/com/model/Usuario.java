@@ -1,22 +1,18 @@
 package com.model;
 
-//import java.util.ArrayList;
-
 public class Usuario {
 	private int id;
 	private String nome;
 	private String email;
 	private String senha;
-//	private ArrayList<Telefone> telefones;
 	
 	//CONSTRUTORES
-	public Usuario(int id,String nome, String email, String senha) {   //ArrayList<Telefone> telefones
+	public Usuario(int id,String nome, String email, String senha) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.senha = senha;
-//		this.telefones = telefones;
 	}
 
 	public Usuario() {
@@ -61,15 +57,4 @@ public class Usuario {
 	public String toString() {
 		return "Usuario [id=" + id + ", nome=" + nome + ", email=" + email + ", senha=" + senha + "]";
 	}
-
-//	public ArrayList<Telefone> getTelefones() {
-//		return telefones;
-//	}
-//
-//	public void setTelefones(ArrayList<Telefone> telefones) {
-//		this.telefones = telefones;
-//	}
-	
-	
-
 }
