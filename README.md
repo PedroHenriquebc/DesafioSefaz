@@ -7,7 +7,7 @@ Recursos Técnicos utilizados:
 
 • Estruturada a aplicação em camadas
 
-• Uso de banco de dados relacional
+• Uso de banco de dados relacional MySQL
 
 • Processo de build utilizando Maven Persistência utilizando JDBC 
 
